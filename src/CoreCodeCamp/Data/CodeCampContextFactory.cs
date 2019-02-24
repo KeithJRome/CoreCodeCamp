@@ -18,7 +18,7 @@ namespace CoreCodeCamp.Data
       var config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json")
-        .AddJsonFile("appsettings.debug.json", true)
+        .AddJsonFile("appsettings.Development.json", true)
         .Build();
 
       return new CodeCampContext(config, new DbContextOptionsBuilder<CodeCampContext>().Options);
