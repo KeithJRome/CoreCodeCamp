@@ -153,6 +153,11 @@ namespace CoreCodeCamp
 
     private void SetupLoggerly(ILoggerFactory loggerFactory, IApplicationLifetime appLifetime, IConfiguration config)
     {
+      if (config["Loggerly:Enabled"].ToLower() != "true")
+      {
+        return;
+      }
+
       var logConfig = LogglyConfig.Instance;
 
       // Setup Basics
